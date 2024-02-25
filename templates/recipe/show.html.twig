@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recette{% endblock %}
+
+{% block body %}
+    <hgroup>
+        <h1>{{ recipe.title|title }}</h1>
+        <span>Created at : {{ recipe.createdAt|date('d/m/Y') }}</span>
+    </hgroup>
+
+    <p>{{ recipe.description|raw }}</p>
+{% endblock %}
+

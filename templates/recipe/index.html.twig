@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recipies{% endblock %}
+
+{% block body %}
+    <div class="grid">
+        {% for recipe in recipies %}
+            <article>
+                <header>{{ recipe.title }}</header>
+                {{ recipe.description|slice(0, 200, '...') }}
+                <footer>Created at: {{ recipe.createdAt|date('d/m/Y') }} - <a href="{{ path('app_recipe_show', {'id': recipe.id, 'slug': recipe.slug}) }}">Show more</a></footer>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}
